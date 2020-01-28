@@ -22,7 +22,7 @@ app.post("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`);
   });
-/*
+
 const bot = new SlackBot({
     token: `${process.env.BOT_TOKEN}`,
     name: 'inspirenuggets'
@@ -118,15 +118,15 @@ function runHelp() {
         params
     );
 }
-*/
 
+/*
 // Slack App directory submission 302 server
 const http = require('http');
 const fs = require('fs');
 
   
 
- /*
+ 
 http.createServer(function (req, res) {
     
     if (req.url == '/') {
