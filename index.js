@@ -3,6 +3,21 @@ const axios = require('axios')
 const pingmydyno = require('pingmydyno');
 require('dotenv').config();
 
+const express = require("express");
+const app = express();
+const PORT = process.env.PORT || 3000;
+const bodyParser = require("body-parser");
+
+app.use(bodyParser.json());
+
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
+app.listen(PORT, () => {
+    console.log(`listening on ${PORT}`);
+  });
+
 const bot = new SlackBot({
     token: `${process.env.BOT_TOKEN}`,
     name: 'inspirenuggets'
@@ -103,7 +118,15 @@ function runHelp() {
 // Slack App directory submission 302 server
 const http = require('http');
 const fs = require('fs');
- 
+
+app.post("/", (req, res) => {
+  
+      console.log(req.body)
+          res.send(req.body.challenge);
+  });
+  
+
+ /*
 http.createServer(function (req, res) {
     
     if (req.url == '/') {
@@ -120,4 +143,4 @@ http.createServer(function (req, res) {
     } 
 }).listen(`${process.env.PORT}`, () => {
     pingmydyno('https://inspirenuggets-slackbot.herokuapp.com/');
-});
+});*/
