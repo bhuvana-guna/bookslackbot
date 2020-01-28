@@ -14,10 +14,15 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+app.post("/", (req, res) => {
+    console.log(req)
+    res.send(req.body.challenge);
+});
+
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`);
   });
-
+/*
 const bot = new SlackBot({
     token: `${process.env.BOT_TOKEN}`,
     name: 'inspirenuggets'
@@ -113,17 +118,12 @@ function runHelp() {
         params
     );
 }
-
+*/
 
 // Slack App directory submission 302 server
 const http = require('http');
 const fs = require('fs');
 
-app.post("/", (req, res) => {
-  
-      console.log(req.body)
-          res.send(req.body.challenge);
-  });
   
 
  /*
