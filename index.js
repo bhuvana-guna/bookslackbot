@@ -2,7 +2,7 @@ const SlackBot = require('slackbots');
 const axios = require('axios')
 const pingmydyno = require('pingmydyno');
 require('dotenv').config();
-
+/*
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -22,7 +22,7 @@ app.post("/", (req, res) => {
 app.listen(PORT, () => {
     console.log(`listening on ${PORT}`);
   });
-
+*/
 const bot = new SlackBot({
     token: `${process.env.BOT_TOKEN}`,
     name: 'inspirenuggets'
